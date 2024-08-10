@@ -83,6 +83,7 @@
     wget
     git
     gh
+    zoxide
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
