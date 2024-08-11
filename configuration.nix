@@ -15,6 +15,10 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  nix.settings.substituters = ["https://aseipp-nix-cache.freetls.fastly.net"];
+
   networking.hostName = "nixospvm"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
