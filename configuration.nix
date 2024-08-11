@@ -57,7 +57,7 @@
   users.users.user = {
     isNormalUser = true;
     description = "User";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -107,6 +107,8 @@
   services.qemuGuest.enable = true;
 
   services.iperf3.enable = true;
+
+  virtualisation.docker.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
