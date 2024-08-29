@@ -23,6 +23,31 @@
       fsType = "ext4";
     };
 
+  fileSystems."/var/lib/docker/overlay2/90d88fd7b0a87819671c2cda14d5d1663a9e6fc7920931a3202573f5d9ba4338/merged" =
+    { device = "overlay";
+      fsType = "overlay";
+    };
+
+  fileSystems."/var/lib/docker/overlay2/69b160e3ed6803c35907d791fbc24c153048346bdce3c0de7875b78bea565e3f/merged" =
+    { device = "overlay";
+      fsType = "overlay";
+    };
+
+  fileSystems."/var/lib/docker/overlay2/4cfa7b65c317d5251e616c740d2ae27bec4dd1ec0e8268f2beeeb5c23fae95a4/merged" =
+    { device = "overlay";
+      fsType = "overlay";
+    };
+
+  fileSystems."/var/lib/docker/overlay2/2c0c5ae271b12272bc618a2927802a56e8c8dc30c1fd20b278631c1e53b4c29a/merged" =
+    { device = "overlay";
+      fsType = "overlay";
+    };
+
+  fileSystems."/mnt/frigate" =
+    { device = "/dev/disk/by-uuid/81483489-76e6-4889-b2f9-5708fb959bf5";
+      fsType = "ext4";
+    };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -30,8 +55,13 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.br-2917a57ed8a6.useDHCP = lib.mkDefault true;
   # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   # networking.interfaces.ens18.useDHCP = lib.mkDefault true;
+  # networking.interfaces.veth5bdc8bd.useDHCP = lib.mkDefault true;
+  # networking.interfaces.veth6fcaa61.useDHCP = lib.mkDefault true;
+  # networking.interfaces.veth71ebcdd.useDHCP = lib.mkDefault true;
+  # networking.interfaces.veth95cafee.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }
