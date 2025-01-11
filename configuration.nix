@@ -15,7 +15,7 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  boot.kernelParams = [ "console=ttyS0,115200n8" ];
+  boot.kernelParams = [ "console=ttyS0,115200n8" "console=tty0" ];
   boot.loader.grub.extraConfig = ''
     serial --speed=115200 --unit=0 --word=8 --parity=no --stop=1
     terminal_input serial
