@@ -9,9 +9,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, nix-flatpak, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, nix-flatpak, nix-cachyos-kernel, ... }@inputs:
     {
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
