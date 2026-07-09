@@ -71,6 +71,14 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # swap space
+  zramSwap.enable = true;
+  systemd.oomd.enable = true;
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 8*1024;
+  }];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.user = {
     isNormalUser = true;
