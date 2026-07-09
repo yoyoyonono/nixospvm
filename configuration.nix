@@ -131,6 +131,7 @@
   services.iperf3.enable = true;
 
   virtualisation.docker.enable = true;
+  virtualisation.docker.package = pkgs.docker_29;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
