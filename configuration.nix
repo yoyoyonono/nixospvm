@@ -21,9 +21,19 @@
     terminal_input serial
     terminal_output serial
   '';
+
   systemd.services."serial-getty@ttyS0" = {
+    enable = true;
+    wantedBy = [ "getty.target" ];
+
     serviceConfig = {
-      Environment = "TERM=xterm-256color";
+      Type = "idle";
+      Restart = "always";
+      RestartSec = 0;
+
+      Environment = [
+        "TERM=xterm-256color"
+      ];
     };
   };
 
