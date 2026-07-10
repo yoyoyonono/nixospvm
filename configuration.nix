@@ -76,7 +76,7 @@
   systemd.oomd.enable = true;
   swapDevices = [{
     device = "/var/lib/swapfile";
-    size = 8*1024;
+    size = 16*1024;
   }];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
