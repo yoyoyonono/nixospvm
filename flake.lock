@@ -207,7 +207,24 @@
         "nix-cachyos-kernel": "nix-cachyos-kernel",
         "nix-flatpak": "nix-flatpak",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_3",
+        "vim_runtime": "vim_runtime"
+      }
+    },
+    "vim_runtime": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728203150,
+        "narHash": "sha256-g1appWgZlE27Rm8gorGp9B1c6UvGhg1bESgHk8umJ8g=",
+        "owner": "amix",
+        "repo": "vimrc",
+        "rev": "46294d589d15d2e7308cf76c58f2df49bbec31e8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "amix",
+        "repo": "vimrc",
+        "type": "github"
       }
     }
   },

@@ -9,7 +9,14 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
+
+    
+    vim_runtime = {
+      url = "github:amix/vimrc/";
+      flake = false;
+    };    
   };
 
   outputs = { self, nixpkgs, nixos-hardware, nix-flatpak, nix-cachyos-kernel, ... }@inputs:

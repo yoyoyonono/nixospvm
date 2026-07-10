@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -53,6 +53,10 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".vim_runtime/" = {
+      source = inputs.vim_runtime;
+      recursive = true;
+    };
   };
 
   # Home Manager can also manage your environment variables through
@@ -99,6 +103,25 @@
       # p10k instant prompt
       P10K_INSTANT_PROMPT="$XDG_CACHE_HOME/p10k-instant-prompt-''${(%):-%n}.zsh"
       [[ ! -r "$P10K_INSTANT_PROMPT" ]] || source "$P10K_INSTANT_PROMPT"
+    '';
+  };
+
+  programs.vim = {
+    enable = true;
+    extraConfig = ''
+    " for amix/vimrc
+    set runtimepath+=~/.vim_runtime
+
+    source ~/.vim_runtime/vimrcs/basic.vim
+    source ~/.vim_runtime/vimrcs/filetypes.vim
+    source ~/.vim_runtime/vimrcs/plugins_config.vim
+    source ~/.vim_runtime/vimrcs/extended.vim
+
+    " actual config
+
+    set noswapfile
+    set number
+    set textwidth=0
     '';
   };
 }
