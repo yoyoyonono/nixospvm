@@ -21,6 +21,11 @@
     terminal_input serial
     terminal_output serial
   '';
+  systemd.services."serial-getty@ttyS0" = {
+    serviceConfig = {
+      Environment = "TERM=xterm-256color";
+    };
+  };
 
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
